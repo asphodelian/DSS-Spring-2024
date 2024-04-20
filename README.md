@@ -4,10 +4,13 @@ Welcome to Gabrielle Salamanca's Data Science Society Project for Spring 2024! I
 and Student Dropout & Success.
 ## Within the Repo
 1. Code Exploration
-> Exploring each dataset with their own R script
+
+Exploring each dataset with their own R script
+
 2. Possible Datasets
 - Drop vs Success
 - Obesity
 - Spotify
 3. README
+
 What you're reading now
