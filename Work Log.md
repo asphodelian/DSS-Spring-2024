@@ -15,6 +15,8 @@
 - Student Exploration R Code
 	- Read in dataset
 	- Renamed columns
+	- Went to define columns, but stopped when realizing there are a lot of inputs
+- Decided to not do student dataset (for now)
 - Updating it accordingly with everything done so far
 
 
