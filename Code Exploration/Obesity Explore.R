@@ -11,7 +11,8 @@ library(dplyr)
 # Read-In #
 ###########
 
-obese <- read.csv("C:/Users/knigh/OneDrive/Desktop/Github/DSS-Spring-2024/Possible Datasets/Obesity/ObesityDataSet_raw_and_data_sinthetic.csv")
+obese <- read.csv("C:/Users/knigh/OneDrive/Desktop/Github/DSS-Spring-2024/Possible Datasets/Obesity/ObesityDataSet_raw_and_data_sinthetic.csv",
+                  stringsAsFactors = TRUE)
 dim(obese)
 
 #########
@@ -39,14 +40,14 @@ colnames(obese)[17] = "Obesity Lvl"
 #obese$Gender <- replace(obese$Gender, obese$Gender == "Female", 0)
 #obese$Gender <- replace(obese$Gender, obese$Gender == "Male", 1)
 
-obese$Gender <- as.factor(obese$Gender)
-obese$`Alcohol Consumption` <- as.factor(obese$`Alcohol Consumption`)
-obese$`High Caloric Food Consumption` <- as.factor(obese$`High Caloric Food Consumption`)
-obese$`Calorie Count` <- as.factor(obese$`Calorie Count`)
-obese$SMOKE <- as.factor(obese$SMOKE)
-obese$family_history_with_overweight <- as.factor(obese$family_history_with_overweight)
-obese$Snacking <- as.factor(obese$Snacking)
-obese$`Mode of Transport` <- as.factor(obese$`Mode of Transport`)
-obese$`Obesity Lvl` <- as.factor(obese$`Obesity Lvl`)
+#obese$Gender <- as.factor(obese$Gender)
+#obese$`Alcohol Consumption` <- as.factor(obese$`Alcohol Consumption`)
+#obese$`High Caloric Food Consumption` <- as.factor(obese$`High Caloric Food Consumption`)
+#obese$`Calorie Count` <- as.factor(obese$`Calorie Count`)
+#obese$SMOKE <- as.factor(obese$SMOKE)
+#obese$family_history_with_overweight <- as.factor(obese$family_history_with_overweight)
+#obese$Snacking <- as.factor(obese$Snacking)
+#obese$`Mode of Transport` <- as.factor(obese$`Mode of Transport`)
+#obese$`Obesity Lvl` <- as.factor(obese$`Obesity Lvl`)
 
 summary(obese)
