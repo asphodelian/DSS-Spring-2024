@@ -16,13 +16,19 @@
 	- Read in dataset
 	- Renamed columns
 	- Went to define columns, but stopped when realizing there are a lot of inputs
-- Decided to not do student dataset (for now)
+	- Decided to not do student dataset (for now)
 	- Included an evaluation log 
 - Obesity Exploration R Code
 	- Read in dataset
 	- Renamed some columns
 	- Turned categorical cols into factors for summary
-- Updating it accordingly with everything done so far
+- Spotify Exploration R Code
+	- Read in dataset
+	- Viewed dataset for further consideration
+	- Zayne has done something similar with this, probably would need more time
+	- Especially since this includes songs, maybe group into genre?
+	- No, there's multiple tags in genre, this could be difficult
+- Obesity will be the one I'll use for the project
 
 
 
