@@ -61,5 +61,5 @@ train <- sample(1:nrow(obese),0.8*nrow(obese))
 test <- -train
 train.data <- obese[train,]
 test.data <- obese[-train,]
-glm.fit <- glm(obese$`Obesity Lvl` ~ ., train.data, family = "binomial")
+glm.fit <- glm(train.data$`Obesity Lvl` ~ ., data = train.data, family = "binomial")
 summary(glm.fit)
