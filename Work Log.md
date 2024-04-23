@@ -12,6 +12,9 @@
 ## March 22
 - DSS meeting
 - Copy-pasted work log from We-R-Finished into repo
+- Student Exploration R Code
+	- Read in dataset
+	- Renamed columns
 - Updating it accordingly with everything done so far
 
 
