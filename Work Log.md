@@ -17,6 +17,11 @@
 	- Renamed columns
 	- Went to define columns, but stopped when realizing there are a lot of inputs
 - Decided to not do student dataset (for now)
+	- Included an evaluation log 
+- Obesity Exploration R Code
+	- Read in dataset
+	- Renamed some columns
+	- Turned categorical cols into factors for summary
 - Updating it accordingly with everything done so far
 
 
