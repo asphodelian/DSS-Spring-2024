@@ -12,7 +12,7 @@ library(dplyr)
 ###########
 
 obese <- read.csv("C:/Users/knigh/OneDrive/Desktop/Github/DSS-Spring-2024/Possible Datasets/Obesity/ObesityDataSet_raw_and_data_sinthetic.csv",
-                  stringsAsFactors = TRUE)
+                  stringsAsFactors <- TRUE)
 dim(obese)
 
 #########
@@ -21,24 +21,24 @@ dim(obese)
 
 names(obese)
 
-colnames(obese)[5] = "Alcohol Consumption"
-colnames(obese)[6] = "High Caloric Food Consumption"
-colnames(obese)[7] = "Vegetable Consumption"
-colnames(obese)[8] = "Main Meal Consumption"
-colnames(obese)[9] = "Calorie Count"
-colnames(obese)[11] = "Water Consumption"
-colnames(obese)[13] = "Exercise Activity"
-colnames(obese)[14] = "Screen Time"
-colnames(obese)[15] = "Snacking"
-colnames(obese)[16] = "Mode of Transport"
-colnames(obese)[17] = "Obesity Lvl"
+colnames(obese)[5] <- "Alcohol Consumption"
+colnames(obese)[6] <- "High Caloric Food Consumption"
+colnames(obese)[7] <- "Vegetable Consumption"
+colnames(obese)[8] <- "Main Meal Consumption"
+colnames(obese)[9] <- "Calorie Count"
+colnames(obese)[11] <- "Water Consumption"
+colnames(obese)[13] <- "Exercise Activity"
+colnames(obese)[14] <- "Screen Time"
+colnames(obese)[15] <- "Snacking"
+colnames(obese)[16] <- "Mode of Transport"
+colnames(obese)[17] <- "Obesity Lvl"
 
 ##############
 # Conversion #
 ##############
 
-#obese$Gender <- replace(obese$Gender, obese$Gender == "Female", 0)
-#obese$Gender <- replace(obese$Gender, obese$Gender == "Male", 1)
+#obese$Gender <- replace(obese$Gender, obese$Gender <-<- "Female", 0)
+#obese$Gender <- replace(obese$Gender, obese$Gender <-<- "Male", 1)
 
 #obese$Gender <- as.factor(obese$Gender)
 #obese$`Alcohol Consumption` <- as.factor(obese$`Alcohol Consumption`)
@@ -51,3 +51,15 @@ colnames(obese)[17] = "Obesity Lvl"
 #obese$`Obesity Lvl` <- as.factor(obese$`Obesity Lvl`)
 
 summary(obese)
+sum(is.na(obese)) # checking for missing values
+
+#######
+# Fit #
+#######
+
+train <- sample(1:nrow(obese),0.8*nrow(obese))
+test <- -train
+train.data <- obese[train,]
+test.data <- obese[-train,]
+glm.fit <- glm(obese$`Obesity Lvl` ~ ., train.data, family = "binomial")
+summary(glm.fit)
