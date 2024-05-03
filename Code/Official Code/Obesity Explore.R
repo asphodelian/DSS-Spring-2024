@@ -40,3 +40,12 @@ colnames(obese)[17] <- "Obesity.Lvl"
 
 summary(obese)
 sum(is.na(obese)) # checking for missing values
+
+#######
+# Fit #
+#######
+
+train <- sample(1:nrow(obese),0.8*nrow(obese))
+test <- -train
+train.data <- obese[train,]
+test.data <- obese[-train,]
