@@ -50,6 +50,10 @@ test <- -train
 train.data <- obese[train,]
 test.data <- obese[-train,]
 
+# All
+fit <- glm(Obesity.Lvl ~ ., data = train.data, family = "binomial")
+summary(fit)
+
 # linear
 glm.fit1 <- glm(Obesity.Lvl ~ Age, data = train.data, 
                 family = "binomial")
@@ -190,4 +194,5 @@ summary(genfit11) # no interact
 summary(genfit12) # yes
 summary(genfit13) # no
 summary(genfit14) # only certain factors
+
 
