@@ -14,3 +14,8 @@ Exercise.Activity
 Screen.Time                  
 Snacking                   
 Mode.of.Transport
+
+# yes
+# no
+# only certain factors
+# no interact
