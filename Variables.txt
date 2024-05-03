@@ -1,0 +1,16 @@
+Age                           
+Gender                       
+Height                        
+Weight                        
+Alcohol.Consumption          
+High.Caloric.Food.Consumption
+Vegetable.Consumption         
+Main.Meal.Consumption         
+Calorie.Count                 
+SMOKE                         
+Water.Consumption             
+Family.History.Overweight
+Exercise.Activity         
+Screen.Time                  
+Snacking                   
+Mode.of.Transport
