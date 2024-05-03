@@ -12,7 +12,7 @@ library(dplyr)
 ###########
 
 obese <- read.csv("C:/Users/knigh/OneDrive/Desktop/Github/DSS-Spring-2024/Possible Datasets/Obesity/ObesityDataSet_raw_and_data_sinthetic.csv",
-                  stringsAsFactors <- TRUE)
+                  stringsAsFactors = TRUE)
 dim(obese)
 
 #########
@@ -85,18 +85,62 @@ glm.fit16 <- glm(Obesity.Lvl ~ Mode.of.Transport, data = train.data,
                  family = "binomial")
 
 summary(glm.fit1) # yes
-summary(glm.fit2) # no
-summary(glm.fit3) # yes
+summary(glm.fit2) # yes
+summary(glm.fit3) # maybe
 summary(glm.fit4) # yes
 summary(glm.fit5) # no
 summary(glm.fit6) # yes
-summary(glm.fit7) # maybe
-summary(glm.fit8) # maybe
-summary(glm.fit9) # yes
-summary(glm.fit10) # maybe
+summary(glm.fit7) # no
+summary(glm.fit8) # yes
+summary(glm.fit9) # maybe
+summary(glm.fit10) # no
 summary(glm.fit11) # yes
 summary(glm.fit12) # yes
 summary(glm.fit13) # yes
-summary(glm.fit14) # no
-summary(glm.fit15) # yes?
-summary(glm.fit16) # yes
+summary(glm.fit14) # yes
+summary(glm.fit15) # only certain factors
+summary(glm.fit16) # no
+
+# two-fer: Age
+
+agefit1 <- glm(Obesity.Lvl ~ Age*Gender, data = train.data, family = "binomial")
+agefit2 <- glm(Obesity.Lvl ~ Age*Height, data = train.data, family = "binomial")
+agefit3 <- glm(Obesity.Lvl ~ Age*Weight, data = train.data, family = "binomial")
+agefit4 <- glm(Obesity.Lvl ~ Age*Alcohol.Consumption, data = train.data, 
+               family = "binomial")
+agefit5 <- glm(Obesity.Lvl ~ Age*High.Caloric.Food.Consumption, 
+               data = train.data, family = "binomial")
+agefit6 <- glm(Obesity.Lvl ~ Age*Vegetable.Consumption, data = train.data, 
+               family = "binomial")
+agefit7 <- glm(Obesity.Lvl ~ Age*Main.Meal.Consumption, data = train.data, 
+               family = "binomial")
+agefit8 <- glm(Obesity.Lvl ~ Age*Calorie.Count, data = train.data, 
+               family = "binomial")
+agefit9 <- glm(Obesity.Lvl ~ Age*SMOKE, data = train.data, family = "binomial")
+agefit10 <- glm(Obesity.Lvl ~ Age*Water.Consumption, data = train.data, 
+                family = "binomial")
+agefit11 <- glm(Obesity.Lvl ~ Age*Family.History.Overweight, data = train.data, 
+                family = "binomial")
+agefit12 <- glm(Obesity.Lvl ~ Age*Exercise.Activity, data = train.data, 
+                family = "binomial")
+agefit13 <- glm(Obesity.Lvl ~ Age*Screen.Time, data = train.data, 
+                family = "binomial")
+agefit14 <- glm(Obesity.Lvl ~ Age*Snacking, data = train.data, family = "binomial")
+agefit15 <- glm(Obesity.Lvl ~ Age*Mode.of.Transport, data = train.data, 
+                family = "binomial")
+
+summary(agefit1) # yes
+summary(agefit2) # yes
+summary(agefit3) # no
+summary(agefit4) # only certain factors
+summary(agefit5) # yes
+summary(agefit6) # yes
+summary(agefit7) # no
+summary(agefit8) # yes
+summary(agefit9) # no
+summary(agefit10) # no
+summary(agefit11) # no
+summary(agefit12) # no
+summary(agefit13) # no interaction
+summary(agefit14) # no
+summary(agefit15) # only certain factors
