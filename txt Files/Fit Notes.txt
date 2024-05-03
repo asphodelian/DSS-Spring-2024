@@ -1,0 +1,68 @@
+Fit Notes
+
+###############
+# Linear fits #
+###############
+
+summary(glm.fit1) 
+- yes
+summary(glm.fit2) 
+- yes
+summary(glm.fit3) 
+- maybe
+summary(glm.fit4) 
+- yes
+summary(glm.fit5) 
+- no
+summary(glm.fit6) 
+- yes
+summary(glm.fit7) 
+- no
+summary(glm.fit8) 
+- yes
+summary(glm.fit9) 
+- maybe
+summary(glm.fit10) 
+- no
+summary(glm.fit11) 
+- yes
+summary(glm.fit12) 
+- yes
+summary(glm.fit13) 
+- yes
+summary(glm.fit14) 
+- yes
+summary(glm.fit15) 
+- only certain factors
+summary(glm.fit16) 
+- no
+
+################
+# Two-fer: Age #
+################
+
+summary(agefit1) 
+- yes
+summary(agefit2) 
+- yes
+summary(agefit3) 
+- no
+- fitted probabilities numerically 0 or 1 occurred
+summary(agefit4) 
+- only certain factors
+summary(agefit5) 
+- yes
+summary(agefit6) 
+- yes
+summary(agefit7) 
+= no
+summary(agefit8) 
+- yes
+summary(agefit9) 
+- no
+summary(agefit10) # no
+summary(agefit11) # no
+summary(agefit12) # no
+summary(agefit13) # no interaction
+summary(agefit14) # no
+summary(agefit15) # only certain factors
