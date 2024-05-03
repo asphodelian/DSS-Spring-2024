@@ -144,3 +144,50 @@ summary(agefit12) # no
 summary(agefit13) # no interaction
 summary(agefit14) # no
 summary(agefit15) # only certain factors
+
+# two-fer: Gender
+
+genfit1 <- glm(Obesity.Lvl ~ Gender*Height, data = train.data, 
+               family = "binomial")
+genfit2 <- glm(Obesity.Lvl ~ Gender*Weight, data = train.data, 
+               family = "binomial")
+genfit3 <- glm(Obesity.Lvl ~ Gender*Alcohol.Consumption, data = train.data, 
+               family = "binomial")
+genfit4 <- glm(Obesity.Lvl ~ Gender*High.Caloric.Food.Consumption, 
+               data = train.data, family = "binomial")
+genfit5 <- glm(Obesity.Lvl ~ Gender*Vegetable.Consumption, data = train.data, 
+               family = "binomial")
+genfit6 <- glm(Obesity.Lvl ~ Gender*Main.Meal.Consumption, data = train.data, 
+               family = "binomial")
+genfit7 <- glm(Obesity.Lvl ~ Gender*Calorie.Count, data = train.data, 
+               family = "binomial")
+genfit8 <- glm(Obesity.Lvl ~ Gender*SMOKE, data = train.data, 
+               family = "binomial")
+genfit9 <- glm(Obesity.Lvl ~ Gender*Water.Consumption, data = train.data, 
+                family = "binomial")
+genfit10 <- glm(Obesity.Lvl ~ Gender*Family.History.Overweight, data = train.data, 
+                family = "binomial")
+genfit11 <- glm(Obesity.Lvl ~ Gender*Exercise.Activity, data = train.data, 
+                family = "binomial")
+genfit12 <- glm(Obesity.Lvl ~ Gender*Screen.Time, data = train.data, 
+                family = "binomial")
+genfit13 <- glm(Obesity.Lvl ~ Gender*Snacking, data = train.data, 
+                family = "binomial")
+genfit14 <- glm(Obesity.Lvl ~ Gender*Mode.of.Transport, data = train.data, 
+                family = "binomial")
+
+summary(genfit1) # only certain factors
+summary(genfit2) # only certain factors
+summary(genfit3) # no
+summary(genfit4) # yes
+summary(genfit5) # minus veggie
+summary(genfit6) # minus meal
+summary(genfit7) # no interact
+summary(genfit8) # no
+summary(genfit9) # yes
+summary(genfit10) # yes
+summary(genfit11) # no interact
+summary(genfit12) # yes
+summary(genfit13) # no
+summary(genfit14) # only certain factors
+
