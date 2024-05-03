@@ -34,7 +34,9 @@ colnames(obese)[15] <- "Snacking"
 colnames(obese)[16] <- "Mode.of.Transport"
 colnames(obese)[17] <- "Obesity.Lvl"
 
-##############
-# Conversion #
-##############
+###########
+# Summary #
+###########
 
+summary(obese)
+sum(is.na(obese)) # checking for missing values
