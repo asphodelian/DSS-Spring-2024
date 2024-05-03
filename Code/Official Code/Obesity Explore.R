@@ -238,3 +238,43 @@ summary(hfit11) # yes
 summary(hfit12) # no
 summary(hfit13) # only certain factors
 
+# two-fer: Weight
+
+wfit1 <- glm(Obesity.Lvl ~ Weight*Alcohol.Consumption, data = train.data, 
+             family = "binomial")
+wfit2 <- glm(Obesity.Lvl ~ Weight*High.Caloric.Food.Consumption, 
+             data = train.data, family = "binomial")
+wfit3 <- glm(Obesity.Lvl ~ Weight*Vegetable.Consumption, data = train.data, 
+             family = "binomial")
+wfit4 <- glm(Obesity.Lvl ~ Weight*Main.Meal.Consumption, data = train.data, 
+             family = "binomial")
+wfit5 <- glm(Obesity.Lvl ~ Weight*Calorie.Count, data = train.data, 
+             family = "binomial")
+wfit6 <- glm(Obesity.Lvl ~ Weight*SMOKE, data = train.data, 
+             family = "binomial")
+wfit7 <- glm(Obesity.Lvl ~ Weight*Water.Consumption, data = train.data, 
+             family = "binomial")
+wfit8 <- glm(Obesity.Lvl ~ Weight*Family.History.Overweight, data = train.data, 
+             family = "binomial")
+wfit9 <- glm(Obesity.Lvl ~ Weight*Exercise.Activity, data = train.data, 
+              family = "binomial")
+wfit10 <- glm(Obesity.Lvl ~ Weight*Screen.Time, data = train.data, 
+              family = "binomial")
+wfit11 <- glm(Obesity.Lvl ~ Weight*Snacking, data = train.data, 
+              family = "binomial")
+wfit12 <- glm(Obesity.Lvl ~ Weight*Mode.of.Transport, data = train.data, 
+              family = "binomial")
+
+summary(wfit1) # no 
+summary(wfit2) # no
+summary(wfit3) # no 
+summary(wfit4) # yes
+summary(wfit5) # no
+summary(wfit6) # no
+summary(wfit7) # no 
+summary(wfit8) # yes
+summary(wfit9) # yes
+summary(wfit10) # no
+summary(wfit11) # no
+summary(wfit12) # only certain factors
+
