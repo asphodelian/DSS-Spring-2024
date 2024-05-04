@@ -56,7 +56,7 @@ hist(age, main = "Age", ylab = "Age in Years", col = "olivedrab3")
 lvl <- table(obese$Obesity.Lvl)
 labels <- c("Insuffucient", "Normal", "Obesity T1", "Obesity T2", "Obesity T3", 
             "Overweight L1", "Overweight L2")
-colors = c("firebrick", "forestgreen", "mediumpurple3", "darkslategray4", 
-           "salmon", "goldenrod", "darkmagenta")
+colors = c("goldenrod", "royalblue", "tomato", "violetred", "lightslateblue", 
+           "purple2", "seagreen4")
 pie(lvl,label = lvl, col = colors)
 legend("topright", labels, cex = 1.5, fill = colors)
