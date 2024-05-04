@@ -48,3 +48,4 @@
 ## May 3
 - Continued doing fits
 	- Getting through the two predictors
+	- Trying 15 predictor fit
