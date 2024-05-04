@@ -96,7 +96,7 @@ summary(glm.fit5) # no
 summary(glm.fit6) # yes
 summary(glm.fit7) # no
 summary(glm.fit8) # yes
-summary(glm.fit9) # maybe
+summary(glm.fit9) # yes
 summary(glm.fit10) # no
 summary(glm.fit11) # yes
 summary(glm.fit12) # yes
@@ -303,3 +303,20 @@ maxfit3 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight +
                  SMOKE + Water.Consumption + Family.History.Overweight +
                  Exercise.Activity + Snacking + Mode.of.Transport,
                data = train.data, family = "binomial")
+
+summary(maxfit1) # no
+summary(maxfit2) # only weight/alcohol
+summary(maxfit3) # yes
+
+#####################
+# Linear Based Fits #
+#####################
+
+fit.1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+               High.Caloric.Food.Consumption + Main.Meal.Consumption + 
+               Calorie.Count + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Snacking,
+               data = train.data, family = "binomial") 
+summary(fit.1) # no
+
+
