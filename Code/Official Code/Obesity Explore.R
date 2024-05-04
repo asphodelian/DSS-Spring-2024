@@ -279,3 +279,27 @@ summary(wfit10) # no
 summary(wfit11) # no
 summary(wfit12) # only certain factors
 
+###############
+# Max attempt #
+###############
+
+maxfit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Screen.Time + Snacking,
+               data = train.data, family = "binomial")
+
+maxfit2 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Screen.Time + Mode.of.Transport,
+               data = train.data, family = "binomial")
+
+maxfit3 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Snacking + Mode.of.Transport,
+               data = train.data, family = "binomial")
