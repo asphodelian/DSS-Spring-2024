@@ -30,5 +30,10 @@
 	- No, there's multiple tags in genre, this could be difficult
 - Obesity will be the one I'll use for the project
 
+## May 2
+- Started doing fits
+	- Got as far as the linears and beginnings of two predictors
 
-
+## May 3
+- Continued doing fits
+	- Getting through the two predictors
