@@ -6,6 +6,7 @@ library(readxl)
 library(caret)
 library(ggplot2)
 library(dplyr)
+library(plotrix)
 
 ###########
 # Dataset #
@@ -36,3 +37,13 @@ colnames(obese)[17] <- "Obesity.Lvl"
 #########
 # Plots #
 #########
+
+# gender pie
+
+x <- table(obese$Gender)
+labels <- c("Female", "Male")
+colors = c("violetred2", "steelblue3")
+pie(x,label = x, col = colors)
+legend("topright", labels, cex = 1.5, fill = colors)
+
+
