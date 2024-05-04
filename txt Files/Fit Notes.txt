@@ -21,7 +21,7 @@ glm.fit7 (Obesity.Lvl ~ Vegetable.Consumption)
 glm.fit8 (Obesity.Lvl ~ Main.Meal.Consumption)
 - yes
 glm.fit9 (Obesity.Lvl ~ Calorie.Count)
-- maybe
+- yes
 glm.fit10 (Obesity.Lvl ~ SMOKE)
 - no
 glm.fit11 (Obesity.Lvl ~ Water.Consumption) 
@@ -188,6 +188,7 @@ maxfit1 (Obesity.Lvl ~ Age + Gender + Height + Weight +
                  Exercise.Activity + Screen.Time + Snacking)
 - algorithm did not converge
 - fitted probabilities numerically 0 or 1 occurred
+- no
 
 maxfit2 (Obesity.Lvl ~ Age + Gender + Height + Weight + 
                  Alcohol.Consumption + High.Caloric.Food.Consumption + 
@@ -195,6 +196,7 @@ maxfit2 (Obesity.Lvl ~ Age + Gender + Height + Weight +
                  SMOKE + Water.Consumption + Family.History.Overweight +
                  Exercise.Activity + Screen.Time + Mode.of.Transport)
 - fitted probabilities numerically 0 or 1 occurred
+- only weight/alcohol
 
 maxfit3 (Obesity.Lvl ~ Age + Gender + Height + Weight + 
                  Alcohol.Consumption + High.Caloric.Food.Consumption + 
@@ -203,5 +205,18 @@ maxfit3 (Obesity.Lvl ~ Age + Gender + Height + Weight +
                  Exercise.Activity + Snacking + Mode.of.Transport)
 - algorithm did not converge
 - fitted probabilities numerically 0 or 1 occurred
+- yes
+
+####################
+# Linear Based Fit #
+####################
+
+fit.1(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+               High.Caloric.Food.Consumption + Main.Meal.Consumption + 
+               Calorie.Count + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Snacking)
+- no
+- fitted probabilities numerically 0 or 1 occurred
+
 
 
