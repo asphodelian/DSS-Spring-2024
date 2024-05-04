@@ -40,10 +40,23 @@ colnames(obese)[17] <- "Obesity.Lvl"
 
 # gender pie
 
-x <- table(obese$Gender)
+g <- table(obese$Gender)
 labels <- c("Female", "Male")
 colors = c("violetred2", "steelblue3")
-pie(x,label = x, col = colors)
+pie(g,label = g, col = colors)
 legend("topright", labels, cex = 1.5, fill = colors)
 
+# age histogram
 
+age <- obese$Age
+hist(age, main = "Age", ylab = "Age in Years", col = "olivedrab3")
+
+# obesity histogram
+
+lvl <- table(obese$Obesity.Lvl)
+labels <- c("Insuffucient", "Normal", "Obesity T1", "Obesity T2", "Obesity T3", 
+            "Overweight L1", "Overweight L2")
+colors = c("firebrick", "forestgreen", "mediumpurple3", "darkslategray4", 
+           "salmon", "goldenrod", "darkmagenta")
+pie(lvl,label = lvl, col = colors)
+legend("topright", labels, cex = 1.5, fill = colors)
