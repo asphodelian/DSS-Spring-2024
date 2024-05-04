@@ -19,3 +19,4 @@ Mode.of.Transport
 # no
 # only certain factors
 # no interact
+- fitted probabilities numerically 0 or 1 occurred
