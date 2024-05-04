@@ -41,28 +41,38 @@ glm.fit16 (Obesity.Lvl ~ Mode.of.Transport)
 # Two-fer: Age #
 ################
 
-summary(agefit1) 
+agefit1 (Obesity.Lvl ~ Age*Gender)
 - yes
-summary(agefit2) 
+agefit2 (Obesity.Lvl ~ Age*Height)
 - yes
-summary(agefit3) 
+agefit3 (Obesity.Lvl ~ Age*Weight)
 - no
 - fitted probabilities numerically 0 or 1 occurred
-summary(agefit4) 
+agefit4 (Obesity.Lvl ~ Age*Alcohol.Consumption)
 - only certain factors
-summary(agefit5) 
+agefit5 (Obesity.Lvl ~ Age*High.Caloric.Food.Consumption)
 - yes
-summary(agefit6) 
+agefit6 (Obesity.Lvl ~ Age*Vegetable.Consumption)
 - yes
-summary(agefit7) 
-= no
-summary(agefit8) 
-- yes
-summary(agefit9) 
+agefit7 (Obesity.Lvl ~ Age*Main.Meal.Consumption)
 - no
-summary(agefit10) # no
-summary(agefit11) # no
-summary(agefit12) # no
-summary(agefit13) # no interaction
-summary(agefit14) # no
-summary(agefit15) # only certain factors
+agefit8 (Obesity.Lvl ~ Age*Calorie.Count)
+- yes
+agefit9 (Obesity.Lvl ~ Age*SMOKE)
+- no
+agefit10 (Obesity.Lvl ~ Age*Water)
+- no
+agefit11 (Obesity.Lvl ~ Age*Family.History.Overweight)
+- no
+agefit12 (Obesity.Lvl ~ Age*Exercise.Activity)
+- no
+agefit13 (Obesity.Lvl ~ Age*Screen.Time)
+- no interaction
+agefit14 (Obesity.Lvl ~ Age*Snacking)
+- no
+agefit15 (Obesity.Lvl ~ Age*Mode.of.Transport)
+- only certain factors
+
+
+
+
