@@ -140,8 +140,41 @@ hfit12 (Obesity.Lvl ~ Height*Snacking)
 hfit13 (Obesity.Lvl ~ Height*Mode.of.Transport)
 - only certain factors
 
+###################
+# Two-fer: Weight #
+###################
 
-
-
+wfit1 (Obesity.Lvl ~ Weight*Alcohol.Consumption)
+- no 
+- fitted probabilities numerically 0 or 1 occurred
+wfit2 (Obesity.Lvl ~ Weight*High.Caloric.Food.Consumption)
+- no
+- fitted probabilities numerically 0 or 1 occurred
+wfit3 (Obesity.Lvl ~ Weight*Vegetable.Consumption)
+- no  
+wfit4 (Obesity.Lvl ~ Weight*Main.Meal.Consumption)
+- yes
+- fitted probabilities numerically 0 or 1 occurred
+wfit5 (Obesity.Lvl ~ Weight*Calorie.Count)
+- no
+wfit6 (Obesity.Lvl ~ Weight*SMOKE)
+- no
+- fitted probabilities numerically 0 or 1 occurred
+wfit7 (Obesity.Lvl ~ Weight*Water.Consumption)
+- no 
+- fitted probabilities numerically 0 or 1 occurred
+wfit8 (Obesity.Lvl ~ Weight*Family.History.Overweight)
+- yes
+wfit9 (Obesity.Lvl ~ Weight*Exercise.Activity)
+- yes
+- fitted probabilities numerically 0 or 1 occurred
+wfit10 (Obesity.Lvl ~ Weight*Screen.Time)
+- no
+wfit11 (Obesity.Lvl ~ Weight*Snacking)
+- no
+- fitted probabilities numerically 0 or 1 occurred
+wfit12 (Obesity.Lvl ~ Weight*Mode.of.Transport)
+- only certain factors
+- fitted probabilities numerically 0 or 1 occurred
 
 
