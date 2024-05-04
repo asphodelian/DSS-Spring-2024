@@ -30,6 +30,17 @@
 	- No, there's multiple tags in genre, this could be difficult
 - Obesity will be the one I'll use for the project
 
+## April
+- Obesity explore
+	- Renamed columns
+	- summary of data
+	- began to split train & test data
+	- ran into problems with trying to do a fit
+		- glm(Obesity.Lvl ~ .)
+	- think at first I picked the wrong data
+	- then fit wasn't converging
+	- realized I couldn't do a fit with all the variables
+
 ## May 2
 - Started doing fits
 	- Got as far as the linears and beginnings of two predictors
