@@ -107,4 +107,41 @@ genfit13 (Obesity.Lvl ~ Gender*Snacking)
 genfit14 (Obesity.Lvl ~ Gender*Mode.of.Transport)
 - only certain factors
 
+###################
+# Two-fer: Height #
+###################
+
+hfit1 (Obesity.Lvl ~ Height*Weight)
+- no interact
+- fitted probabilities numerically 0 or 1 occurred
+hfit2 (Obesity.Lvl ~ Height*Alcohol.Consumption)
+- only certain factors
+hfit3 (Obesity.Lvl ~ Height*High.Caloric.Food.Consumption)
+- no interact
+hfit4 (Obesity.Lvl ~ Height*Vegetable.Consumption)
+- no
+hfit5 (Obesity.Lvl ~ Height*Main.Meal.Consumption)
+- yes
+hfit6 (Obesity.Lvl ~ Height*Calorie.Count)
+- no
+hfit7 (Obesity.Lvl ~ Height*SMOKE)
+- no 
+hfit8 (Obesity.Lvl ~ Height*Water.Consumption)
+- no
+hfit9 (Obesity.Lvl ~ Height*Family.History.Overweight)
+- yes
+hfit10 (Obesity.Lvl ~ Height*Exercise.Activity)
+- yes
+hfit11 (Obesity.Lvl ~ Height*Screen.Time)
+- yes
+hfit12 (Obesity.Lvl ~ Height*Snacking)
+- no
+- fitted probabilities numerically 0 or 1 occurred
+hfit13 (Obesity.Lvl ~ Height*Mode.of.Transport)
+- only certain factors
+
+
+
+
+
 
