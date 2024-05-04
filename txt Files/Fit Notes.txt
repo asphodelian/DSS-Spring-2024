@@ -4,37 +4,37 @@ Fit Notes
 # Linear fits #
 ###############
 
-summary(glm.fit1) 
+glm.fit1 (Obesity.Lvl ~ Age)
 - yes
-summary(glm.fit2) 
+glm.fit2 (Obesity.Lvl ~ Gender)
 - yes
-summary(glm.fit3) 
+glm.fit3 (Obesity.Lvl ~ Height)
+- yes
+glm.fit4 (Obesity.Lvl ~ Weight)
+- yes
+glm.fit5 (Obesity.Lvl ~ Alcohol.Consumption) 
+- no
+glm.fit6 (Obesity.Lvl ~ High.Caloric.Food.Consumption)
+- yes
+glm.fit7 (Obesity.Lvl ~ Vegetable.Consumption)
+- no
+glm.fit8 (Obesity.Lvl ~ Main.Meal.Consumption)
+- yes
+glm.fit9 (Obesity.Lvl ~ Calorie.Count)
 - maybe
-summary(glm.fit4) 
-- yes
-summary(glm.fit5) 
+glm.fit10 (Obesity.Lvl ~ SMOKE)
 - no
-summary(glm.fit6) 
+glm.fit11 (Obesity.Lvl ~ Water.Consumption) 
 - yes
-summary(glm.fit7) 
-- no
-summary(glm.fit8) 
+glm.fit12 (Obesity.Lvl ~ Family.History.Overweight) 
 - yes
-summary(glm.fit9) 
-- maybe
-summary(glm.fit10) 
-- no
-summary(glm.fit11) 
+glm.fit13 (Obesity.Lvl ~ Exercise.Activity) 
 - yes
-summary(glm.fit12) 
+glm.fit14 (Obesity.Lvl ~ Screen.Time) 
 - yes
-summary(glm.fit13) 
-- yes
-summary(glm.fit14) 
-- yes
-summary(glm.fit15) 
+glm.fit15 (Obesity.Lvl ~ Snacking) 
 - only certain factors
-summary(glm.fit16) 
+glm.fit16 (Obesity.Lvl ~ Mode.of.Transport)
 - no
 
 ################
