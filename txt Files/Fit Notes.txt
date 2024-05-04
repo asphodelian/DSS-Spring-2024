@@ -73,6 +73,38 @@ agefit14 (Obesity.Lvl ~ Age*Snacking)
 agefit15 (Obesity.Lvl ~ Age*Mode.of.Transport)
 - only certain factors
 
+###################
+# Two-fer: Gender #
+###################
 
+genfit1 (Obesity.Lvl ~ Gender*Height)
+- no
+genfit2 (Obesity.Lvl ~ Gender*Weight)
+- no
+- glm.fit: fitted probabilities numerically 0 or 1 occurred
+genfit3 (Obesity.Lvl ~ Gender*Alcohol)
+- no
+genfit4 (Obesity.Lvl ~ Gender*High.Caloric.Food.Consumption)
+- yes
+genfit5 (Obesity.Lvl ~ Gender*Vegetable.Consumption)
+- minus veggie
+genfit6 (Obesity.Lvl ~ Gender*Main.Meal.Consumption)
+- minus meal
+genfit7 (Obesity.Lvl ~ Gender*Calorie.Count)
+- no interact
+genfit8 (Obesity.Lvl ~ Gender*SMOKE)
+- no
+genfit9 (Obesity.Lvl ~ Gender*Water.Consumption)
+- yes
+genfit10 (Obesity.Lvl ~ Gender*Family.History.Overweight)
+- yes
+genfit11 (Obesity.Lvl ~ Gender*Exercise.Activity)
+- no interact
+genfit12 (Obesity.Lvl ~ Gender*Screen.Time)
+- yes
+genfit13 (Obesity.Lvl ~ Gender*Snacking)
+- no
+genfit14 (Obesity.Lvl ~ Gender*Mode.of.Transport)
+- only certain factors
 
 

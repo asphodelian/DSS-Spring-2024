@@ -90,7 +90,7 @@ glm.fit16 <- glm(Obesity.Lvl ~ Mode.of.Transport, data = train.data,
 
 summary(glm.fit1) # yes
 summary(glm.fit2) # yes
-summary(glm.fit3) # maybe
+summary(glm.fit3) # yes
 summary(glm.fit4) # yes
 summary(glm.fit5) # no
 summary(glm.fit6) # yes
@@ -129,7 +129,8 @@ agefit12 <- glm(Obesity.Lvl ~ Age*Exercise.Activity, data = train.data,
                 family = "binomial")
 agefit13 <- glm(Obesity.Lvl ~ Age*Screen.Time, data = train.data, 
                 family = "binomial")
-agefit14 <- glm(Obesity.Lvl ~ Age*Snacking, data = train.data, family = "binomial")
+agefit14 <- glm(Obesity.Lvl ~ Age*Snacking, data = train.data, 
+                family = "binomial")
 agefit15 <- glm(Obesity.Lvl ~ Age*Mode.of.Transport, data = train.data, 
                 family = "binomial")
 
@@ -180,8 +181,8 @@ genfit13 <- glm(Obesity.Lvl ~ Gender*Snacking, data = train.data,
 genfit14 <- glm(Obesity.Lvl ~ Gender*Mode.of.Transport, data = train.data, 
                 family = "binomial")
 
-summary(genfit1) # only certain factors
-summary(genfit2) # only certain factors
+summary(genfit1) # no
+summary(genfit2) # no
 summary(genfit3) # no
 summary(genfit4) # yes
 summary(genfit5) # minus veggie
