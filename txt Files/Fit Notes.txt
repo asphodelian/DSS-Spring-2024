@@ -177,4 +177,31 @@ wfit12 (Obesity.Lvl ~ Weight*Mode.of.Transport)
 - only certain factors
 - fitted probabilities numerically 0 or 1 occurred
 
+################### 
+# Max Fit Attempt #
+###################
+
+maxfit1 (Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Screen.Time + Snacking)
+- algorithm did not converge
+- fitted probabilities numerically 0 or 1 occurred
+
+maxfit2 (Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Screen.Time + Mode.of.Transport)
+- fitted probabilities numerically 0 or 1 occurred
+
+maxfit3 (Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Snacking + Mode.of.Transport)
+- algorithm did not converge
+- fitted probabilities numerically 0 or 1 occurred
+
 
