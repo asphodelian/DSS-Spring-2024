@@ -2,10 +2,15 @@
 # Libraries #
 #############
 
-library(readxl)
 library(caret)
-library(ggplot2)
+library(class) # KNN
 library(dplyr)
+library(ggplot2)
+library(glmnet) # ridge regress & LASSO
+library(leaps) # best subset
+library(MASS) # QDA & LDA
+library(readxl)
+library(stats)
 
 ###########
 # Read-In #
@@ -50,15 +55,11 @@ test <- -train
 train.data <- obese[train,]
 test.data <- obese[-train,]
 
-maxfit3 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
-                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
-                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
-                 SMOKE + Water.Consumption + Family.History.Overweight +
-                 Exercise.Activity + Snacking + Mode.of.Transport, 
-               data = train.data, family = "binomial")
-summary(maxfit3)
+fit.3 <- glm(Obesity.Lvl ~ Age + Weight,
+             data = train.data, family = "binomial") 
+summary(fit.3)
 
-max.probs <- predict(maxfit1, test.data, type = "response")
+max.probs <- predict(maxfit3, test.data, type = "response")
 max.pred <- rep("no",nrow(test.data))
 max.pred[max.probs > 0.5] <- "yes"
 table(max.pred, test.data$Obesity.Lvl)
@@ -68,15 +69,13 @@ mean(max.pred == test.data$Obesity.Lvl)
 # Quadratic Discriminant Analysis #
 ###################################
 
-qda.fit <- qda(Obesity.Lvl ~ Age + Gender + Height + Weight + 
-                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
-                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
-                 SMOKE + Water.Consumption + Family.History.Overweight +
-                 Exercise.Activity + Snacking + Mode.of.Transport,
+qda.fit <- qda(Obesity.Lvl ~ Age + Weight,
                data = train.data)
 
 # Error in qda.default(x, grouping, ...) : 
 # rank deficiency in group Insufficient_Weight
+
+# with "insufficient weight no longer there, some group is now too small for qda
 
 qda.fit
 qda.class <- predict(qda.fit, test.data)$class
