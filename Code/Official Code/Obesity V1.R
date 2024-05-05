@@ -16,61 +16,84 @@ library(stats)
 # Read-In #
 ###########
 
-obese <- read.csv("C:/Users/knigh/OneDrive/Desktop/Github/DSS-Spring-2024/Possible Datasets/Obesity/ObesityDataSet_raw_and_data_sinthetic.csv",
+obesity <- read.csv("C:/Users/knigh/OneDrive/Desktop/Github/DSS-Spring-2024/Possible Datasets/Obesity/ObesityDataSet_raw_and_data_sinthetic.csv",
                   stringsAsFactors = TRUE)
-dim(obese)
+dim(obesity)
 
 #########
 # Names #
 #########
 
-names(obese)
+names(obesity)
 
-colnames(obese)[5] <- "Alcohol.Consumption"
-colnames(obese)[6] <- "High.Caloric.Food.Consumption"
-colnames(obese)[7] <- "Vegetable.Consumption"
-colnames(obese)[8] <- "Main.Meal.Consumption"
-colnames(obese)[9] <- "Calorie.Count"
-colnames(obese)[11] <- "Water.Consumption"
-colnames(obese)[12] <- "Family.History.Overweight"
-colnames(obese)[13] <- "Exercise.Activity"
-colnames(obese)[14] <- "Screen.Time"
-colnames(obese)[15] <- "Snacking"
-colnames(obese)[16] <- "Mode.of.Transport"
-colnames(obese)[17] <- "Obesity.Lvl"
+colnames(obesity)[5] <- "Alcohol.Consumption"
+colnames(obesity)[6] <- "High.Caloric.Food.Consumption"
+colnames(obesity)[7] <- "Vegetable.Consumption"
+colnames(obesity)[8] <- "Main.Meal.Consumption"
+colnames(obesity)[9] <- "Calorie.Count"
+colnames(obesity)[11] <- "Water.Consumption"
+colnames(obesity)[12] <- "Family.History.Overweight"
+colnames(obesity)[13] <- "Exercise.Activity"
+colnames(obesity)[14] <- "Screen.Time"
+colnames(obesity)[15] <- "Snacking"
+colnames(obesity)[16] <- "Mode.of.Transport"
+colnames(obesity)[17] <- "Obesity.Lvl"
 
 ###########
 # Summary #
 ###########
 
+summary(obesity)
+sum(is.na(obesity)) # checking for missing values
+
+###############
+# Edited Data #
+###############
+
+obese <- obesity[!(obesity$Obesity.Lvl %in% "Insufficient_Weight"),]
 summary(obese)
-sum(is.na(obese)) # checking for missing values
+sum(is.na(obese))
 
 #######
 # Fit #
 #######
 
-train <- sample(1:nrow(obese),0.8*nrow(obese))
-test <- -train
-train.data <- obese[train,]
-test.data <- obese[-train,]
+ob.train <- sample(1:nrow(obesity),0.8*nrow(obesity))
+ob.test <- -ob.train
+train.data1 <- obesity[ob.train,]
+test.data1 <- obesity[-ob.train,]
 
-fit.3 <- glm(Obesity.Lvl ~ Age + Weight,
-             data = train.data, family = "binomial") 
-summary(fit.3)
+o.train <- sample(1:nrow(obese),0.8*nrow(obese))
+o.test <- -o.train
+train.data2 <- obese[o.train,]
+test.data2 <- obese[-o.train,]
 
-max.probs <- predict(maxfit3, test.data, type = "response")
-max.pred <- rep("no",nrow(test.data))
-max.pred[max.probs > 0.5] <- "yes"
-table(max.pred, test.data$Obesity.Lvl)
-mean(max.pred == test.data$Obesity.Lvl)
+ob.fit <- glm(Obesity.Lvl ~ Age + Weight,
+             data = train.data1, family = "binomial")
+o.fit <- glm(Obesity.Lvl ~ Age + Weight,
+              data = train.data2, family = "binomial") 
+summary(ob.fit)
+summary(o.fit)
+
+ob.probs <- predict(ob.fit, test.data1, type = "response")
+ob.pred <- rep("no",nrow(test.data1))
+ob.pred[ob.probs > 0.5] <- "yes"
+table(ob.pred, test.data1$Obesity.Lvl)
+mean(ob.pred == test.data1$Obesity.Lvl)
+
+# runs into errors
+o.probs <- predict(o.fit, test.data1, type = "response")
+o.pred <- rep("no",nrow(test.data2))
+o.pred[o.probs > 0.5] <- "yes"
+table(ob.pred, test.data2$Obesity.Lvl)
+mean(ob.pred == test.data2$Obesity.Lvl)
 
 ###################################
 # Quadratic Discriminant Analysis #
 ###################################
 
 qda.fit <- qda(Obesity.Lvl ~ Age + Weight,
-               data = train.data)
+               data = train.data1)
 
 # Error in qda.default(x, grouping, ...) : 
 # rank deficiency in group Insufficient_Weight
