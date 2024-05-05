@@ -115,4 +115,19 @@ lda.class <- predict(lda.fit, test.data1)$class
 table(lda.class, test.data1$Obesity.Lvl)
 mean(lda.class == test.data1$Obesity.Lvl)
 
+########################
+# K-Nearest Neighbors ##
+########################
+
+train.X <- obesity[train,]
+test.X <- obesity[-train,]
+y.train <- train.data1$Obesity.Lvl
+set.seed(1)
+knn.pred <- knn(train.X, test.X, y.train, k = 1)
+table(knn.pred, test.data1$Obesity.Lvl)
+mean(knn.pred == test.data1$Obesity.Lvl)
+
+knn.pred = knn(train.X, test.X, y.train, k = 5)
+table(knn.pred, test.data1$Obesity.Lvl)
+mean(knn.pred==test.data1$Obesity.Lvl)
 
