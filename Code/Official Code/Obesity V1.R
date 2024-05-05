@@ -57,3 +57,9 @@ maxfit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight +
                  Exercise.Activity + Screen.Time + Snacking,
                data = train.data, family = "binomial")
 summary(maxfit1)
+
+max.probs <- predict(maxfit1, test.data, type = "response")
+max.pred <- rep("no",nrow(test.data))
+max.pred[max.probs > 0.5] <- "yes"
+table(max.pred, test.data$Obesity.Lvl)
+mean(max.pred == test.data$Obesity.Lvl)
