@@ -92,7 +92,7 @@ summary(glm.fit1) # yes
 summary(glm.fit2) # yes
 summary(glm.fit3) # yes
 summary(glm.fit4) # yes
-summary(glm.fit5) # no
+summary(glm.fit5) # no interact
 summary(glm.fit6) # yes
 summary(glm.fit7) # no
 summary(glm.fit8) # yes
@@ -137,7 +137,7 @@ agefit15 <- glm(Obesity.Lvl ~ Age*Mode.of.Transport, data = train.data,
 summary(agefit1) # yes
 summary(agefit2) # yes
 summary(agefit3) # no
-summary(agefit4) # only certain factors
+summary(agefit4) # no
 summary(agefit5) # yes
 summary(agefit6) # yes
 summary(agefit7) # no
@@ -146,7 +146,7 @@ summary(agefit9) # no
 summary(agefit10) # no
 summary(agefit11) # no
 summary(agefit12) # no
-summary(agefit13) # no interaction
+summary(agefit13) # no 
 summary(agefit14) # no
 summary(agefit15) # only certain factors
 
@@ -181,10 +181,10 @@ genfit13 <- glm(Obesity.Lvl ~ Gender*Snacking, data = train.data,
 genfit14 <- glm(Obesity.Lvl ~ Gender*Mode.of.Transport, data = train.data, 
                 family = "binomial")
 
-summary(genfit1) # no
+summary(genfit1) # minus height
 summary(genfit2) # no
 summary(genfit3) # no
-summary(genfit4) # yes
+summary(genfit4) # no
 summary(genfit5) # minus veggie
 summary(genfit6) # minus meal
 summary(genfit7) # no interact
@@ -226,8 +226,8 @@ hfit13 <- glm(Obesity.Lvl ~ Height*Mode.of.Transport, data = train.data,
                 family = "binomial")
 
 summary(hfit1) # no interact
-summary(hfit2) # only certain factors
-summary(hfit3) # no interact
+summary(hfit2) # no
+summary(hfit3) # yes
 summary(hfit4) # no
 summary(hfit5) # yes
 summary(hfit6) # no
@@ -275,7 +275,7 @@ summary(wfit6) # no
 summary(wfit7) # no 
 summary(wfit8) # yes
 summary(wfit9) # yes
-summary(wfit10) # no
+summary(wfit10) # no interact
 summary(wfit11) # no
 summary(wfit12) # only certain factors
 
