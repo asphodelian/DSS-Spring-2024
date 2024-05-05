@@ -15,7 +15,7 @@ obese <- read.csv("C:/Users/knigh/OneDrive/Desktop/Github/DSS-Spring-2024/Possib
                   stringsAsFactors = TRUE)
 dim(obese)
 
-obese <- obese[obese$Obesity.Lvl != "Insufficient_Weight",]
+obese <- obese[!(obese$NObeyesdad %in% "Insufficient_Weight"),] 
 
 #########
 # Names #
@@ -321,5 +321,14 @@ fit.1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight +
                data = train.data, family = "binomial") 
 summary(fit.1) # no
 
+fit.2 <- glm(Obesity.Lvl ~ Age + Height + Weight + Water.Consumption,
+             data = train.data, family = "binomial") 
+summary(fit.2) # no
 
+fit.3 <- glm(Obesity.Lvl ~ Age + Weight,
+             data = train.data, family = "binomial") 
+summary(fit.3) # no
 
+fit.4 <- glm(Obesity.Lvl ~ Age*Weight,
+             data = train.data, family = "binomial") 
+summary(fit.4) # no
