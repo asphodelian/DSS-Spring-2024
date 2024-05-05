@@ -50,16 +50,38 @@ test <- -train
 train.data <- obese[train,]
 test.data <- obese[-train,]
 
-maxfit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+maxfit3 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
                  Alcohol.Consumption + High.Caloric.Food.Consumption + 
                  Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
                  SMOKE + Water.Consumption + Family.History.Overweight +
-                 Exercise.Activity + Screen.Time + Snacking,
+                 Exercise.Activity + Snacking + Mode.of.Transport, 
                data = train.data, family = "binomial")
-summary(maxfit1)
+summary(maxfit3)
 
 max.probs <- predict(maxfit1, test.data, type = "response")
 max.pred <- rep("no",nrow(test.data))
 max.pred[max.probs > 0.5] <- "yes"
 table(max.pred, test.data$Obesity.Lvl)
 mean(max.pred == test.data$Obesity.Lvl)
+
+###################################
+# Quadratic Discriminant Analysis #
+###################################
+
+qda.fit <- qda(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Snacking + Mode.of.Transport,
+               data = train.data)
+
+# Error in qda.default(x, grouping, ...) : 
+# rank deficiency in group Insufficient_Weight
+
+qda.fit
+qda.class <- predict(qda.fit, test.data)$class
+table(qda.class, test.data$Obesity.Lvl)
+mean(qda.class == test.data$Obesity.Lvl)
+
+
+
