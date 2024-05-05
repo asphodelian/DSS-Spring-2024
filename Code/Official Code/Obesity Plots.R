@@ -34,6 +34,28 @@ colnames(obese)[15] <- "Snacking"
 colnames(obese)[16] <- "Mode.of.Transport"
 colnames(obese)[17] <- "Obesity.Lvl"
 
+#############
+# Variables #
+#############
+
+age <- obese$Age
+gender <- obese$Gender
+height <- obese$Height
+weight <- obese$Weight
+alcohol <- obese$Alcohol.Consumption
+HCfood <- obese$High.Caloric.Food.Consumption
+veggie <- obese$Vegetable.Consumption
+main <- obese$Main.Meal.Consumption
+count <- obese$Calorie.Count
+smoke <- obese$SMOKE
+water <- obese$Water.Consumption
+history <- obese$Family.History.Overweight
+exercise <- obese$Exercise.Activity
+screen <- obese$Screen.Time
+snack <- obese$Snacking
+transport <- obese$Mode.of.Transport
+lvl <- table(obese$Obesity.Lvl)
+
 #########
 # Plots #
 #########
@@ -48,15 +70,18 @@ legend("topright", labels, cex = 1.5, fill = colors)
 
 # age histogram
 
-age <- obese$Age
 hist(age, main = "Age", ylab = "Age in Years", col = "olivedrab3")
 
-# obesity histogram
+# obesity pie
 
-lvl <- table(obese$Obesity.Lvl)
 labels <- c("Insuffucient", "Normal", "Obesity T1", "Obesity T2", "Obesity T3", 
             "Overweight L1", "Overweight L2")
 colors = c("goldenrod", "royalblue", "tomato", "violetred", "lightslateblue", 
            "purple2", "seagreen4")
 pie(lvl,label = lvl, col = colors)
 legend("topright", labels, cex = 1.5, fill = colors)
+
+# scatterplot
+
+plot()
+
