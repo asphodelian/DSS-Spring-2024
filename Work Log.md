@@ -49,3 +49,15 @@
 - Continued doing fits
 	- Getting through the two predictors
 	- Trying 15 predictor fit
+	- Might just do maxfit3
+	- Put together fit of the passing linear fits just to try
+
+## May 4
+- Made a plot specific script
+	- libraries, read-in, and column names
+	- variables
+	- pie chart/histogram/scatterplot/boxplot
+- Made dupe of dataset to fool around with
+	- made some charts
+	- renamed vars
+	- some formatting
