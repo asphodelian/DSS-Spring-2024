@@ -1,8 +1,8 @@
-Age                           
-Gender                       
-Height                        
-Weight                        
-Alcohol.Consumption          
+Age: in years                           
+Gender: Male/Female                       
+Height: in meters                        
+Weight: in kg                        
+Alcohol.Consumption: yes/no         
 High.Caloric.Food.Consumption
 Vegetable.Consumption         
 Main.Meal.Consumption         
@@ -15,8 +15,30 @@ Screen.Time
 Snacking                   
 Mode.of.Transport
 
-# yes
-# no
-# only certain factors
-# no interact
-- fitted probabilities numerically 0 or 1 occurred
+#-#-#-#-#-#-#-#-#-#-#
+
+yes
+no
+only certain factors
+no interact
+fitted probabilities numerically 0 or 1 occurred
+
+#-#-#-#-#-#-#-#-#-#-#
+
+age
+gender
+height
+weight
+alcohol
+HCfood
+veggie
+main
+count
+smoke
+water
+history
+exercise
+screen
+snack
+transport
+lvl
