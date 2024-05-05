@@ -111,8 +111,8 @@ mean(qda.class == test.data1$Obesity.Lvl)
 lda.fit <- lda(Obesity.Lvl ~ Age + Weight, data = train.data1) 
 lda.fit
 plot(lda.fit)
-lda.class <-  predict(lda.fit, test.data1)$class
-table(lda.class, test.data1$call)
-mean(lda.class == test.data1$call)
+lda.class <- predict(lda.fit, test.data1)$class
+table(lda.class, test.data1$Obesity.Lvl)
+mean(lda.class == test.data1$Obesity.Lvl)
 
 
