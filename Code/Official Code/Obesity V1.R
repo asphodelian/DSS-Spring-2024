@@ -92,8 +92,7 @@ mean(ob.pred == test.data2$Obesity.Lvl)
 # Quadratic Discriminant Analysis #
 ###################################
 
-qda.fit <- qda(Obesity.Lvl ~ Age + Weight,
-               data = train.data1)
+qda.fit <- qda(Obesity.Lvl ~ Age + Weight, data = train.data1)
 
 # Error in qda.default(x, grouping, ...) : 
 # rank deficiency in group Insufficient_Weight
@@ -101,9 +100,19 @@ qda.fit <- qda(Obesity.Lvl ~ Age + Weight,
 # with "insufficient weight no longer there, some group is now too small for qda
 
 qda.fit
-qda.class <- predict(qda.fit, test.data)$class
-table(qda.class, test.data$Obesity.Lvl)
-mean(qda.class == test.data$Obesity.Lvl)
+qda.class <- predict(qda.fit, test.data1)$class
+table(qda.class, test.data1$Obesity.Lvl)
+mean(qda.class == test.data1$Obesity.Lvl)
 
+################################
+# Linear Discriminant Analysis #
+################################
+
+lda.fit <- lda(Obesity.Lvl ~ Age + Weight, data = train.data1) 
+lda.fit
+plot(lda.fit)
+lda.class <-  predict(lda.fit, test.data1)$class
+table(lda.class, test.data1$call)
+mean(lda.class == test.data1$call)
 
 
