@@ -83,30 +83,40 @@ legend("topright", labels, cex = 1.5, fill = colors)
 
 # scatterplot
 
-plot(age, weight, main = "Weight vs Age", xlab = "Age", ylab = "Weight (kg)")
-plot(height, weight, main = "Weight vs Height", xlab = "Height (m)", 
+plot(age, weight, col = "lightseagreen", main = "Weight vs Age", xlab = "Age", 
      ylab = "Weight (kg)")
-plot(alcohol, weight, main = "Weight vs Alcohol", xlab = "Alcohol Consumption", 
+plot(height, weight, col = "mediumvioletred", main = "Weight vs Height", 
+     xlab = "Height (m)", ylab = "Weight (kg)")
+plot(alcohol, weight, 
+     col = c("green4", "chartreuse3", "firebrick", "lightsalmon"),
+     main = "Weight vs Alcohol", xlab = "Alcohol Consumption", 
      ylab = "Weight (kg)")
-plot(HCfood, weight, main = "Weight vs High Caloric Food", 
+plot(HCfood, weight, col = c("chartreuse3", "firebrick"), 
+     main = "Weight vs High Caloric Food", 
      xlab = "High Caloric Food Consumption", ylab = "Weight (kg)")
-plot(veggie, weight, main = "Weight vs Vegetable", 
+plot(veggie, weight, col = "mediumseagreen", main = "Weight vs Vegetable", 
      xlab = "Vegetable Consumption", ylab = "Weight (kg)")
-plot(main, weight, main = "Weight vs Main Meal", xlab = "Amount of Main Meals", 
-     ylab = "Weight (kg)")
+plot(main, weight, col = "lightskyblue3", main = "Weight vs Main Meal", 
+     xlab = "Amount of Main Meals", ylab = "Weight (kg)")
 plot(count, weight, main = "Weight vs Calorie Count", 
-     xlab = "Do you calorie count?", ylab = "Weight (kg)")
-plot(smoke, weight, main = "Weight vs Smoking", xlab = "Do you smoke?", 
+     col = c("firebrick", "chartreuse3"), xlab = "Do you calorie count?", 
      ylab = "Weight (kg)")
-plot(water, weight, main = "Weight vs Water", xlab = "Water Consumptiom", 
-     ylab = "Weight (kg)")
-plot(history, weight, main = "Weight vs Obesity History", 
+plot(smoke, weight, col = c("firebrick", "chartreuse3"),
+     main = "Weight vs Smoking", xlab = "Do you smoke?", ylab = "Weight (kg)")
+plot(water, weight, col = "royalblue2", main = "Weight vs Water", 
+     xlab = "Water Consumption", ylab = "Weight (kg)")
+plot(history, weight, , col = c("firebrick", "chartreuse3"),
+     main = "Weight vs Obesity History", 
      xlab = "Do you have a family history of obesity?", ylab = "Weight (kg)")
-plot(exercise, weight, main = "Weight vs Exercise", 
+plot(exercise, weight, col = "slateblue2", main = "Weight vs Exercise", 
      xlab = "How often do you exercise?", ylab = "Weight (kg)")
-plot(screen, weight, main = "Weight vs Screen Time", 
+plot(screen, weight, col = "goldenrod2", main = "Weight vs Screen Time", 
      xlab = "How long is your screen time?", ylab = "Weight (kg)")
-plot(snack, weight, main = "Weight vs Snacking", 
-     xlab = "Do you snack between meals?", ylab = "Weight (kg)")
-plot(transport, weight, main = "Weight vs Mode of Transport", 
+plot(snack, weight,
+     col = c("green4", "chartreuse3", "firebrick", "lightsalmon"),
+     main = "Weight vs Snacking", xlab = "Do you snack between meals?", 
+     ylab = "Weight (kg)")
+plot(transport, weight, 
+     col = c("violetred3", "springgreen4", "red4", "lightslateblue", "moccasin"),
+     main = "Weight vs Mode of Transport", 
      xlab = "Main Mode of Transportation", ylab = "Weight (kg)")
