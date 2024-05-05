@@ -119,8 +119,8 @@ mean(lda.class == test.data1$Obesity.Lvl)
 # K-Nearest Neighbors ##
 ########################
 
-train.X <- obesity[train,]
-test.X <- obesity[-train,]
+train.X <- obesity[ob.train,]
+test.X <- obesity[-ob.train,]
 y.train <- train.data1$Obesity.Lvl
 set.seed(1)
 knn.pred <- knn(train.X, test.X, y.train, k = 1)
