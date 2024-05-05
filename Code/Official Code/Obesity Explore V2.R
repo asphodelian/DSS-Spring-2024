@@ -322,3 +322,4 @@ fit.1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight +
 summary(fit.1) # no
 
 
+
