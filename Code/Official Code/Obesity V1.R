@@ -49,3 +49,11 @@ train <- sample(1:nrow(obese),0.8*nrow(obese))
 test <- -train
 train.data <- obese[train,]
 test.data <- obese[-train,]
+
+maxfit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 Alcohol.Consumption + High.Caloric.Food.Consumption + 
+                 Vegetable.Consumption + Main.Meal.Consumption + Calorie.Count +
+                 SMOKE + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Screen.Time + Snacking,
+               data = train.data, family = "binomial")
+summary(maxfit1)
