@@ -61,3 +61,12 @@
 	- made some charts
 	- renamed vars
 	- some formatting
+
+## May 5
+- New script for doing the accuracy tests
+	- QDA (had a bit of trouble, but managed)
+	- LDA (had a bit of trouble, but managed)
+	- KNN (skip, some sort of error)
+	- Best subset selection (forgot to save & commit, will apear in May 7)
+- Did try with insufficient weight removed
+	- didn't work
