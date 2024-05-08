@@ -70,3 +70,8 @@
 	- Best subset selection (forgot to save & commit, will apear in May 7)
 - Did try with insufficient weight removed
 	- didn't work
+
+## May 7
+- Began slides presentation prep
+	- slides template chosen from SlidesCarnival
+	- starting with the basics of the dataset
