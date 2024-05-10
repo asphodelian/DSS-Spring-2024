@@ -68,14 +68,21 @@ o.test <- -o.train
 train.data2 <- obese[o.train,]
 test.data2 <- obese[-o.train,]
 
-ob.fit <- glm(Obesity.Lvl ~ Age + Weight,
+ob.fit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+                 High.Caloric.Food.Consumption + Main.Meal.Consumption + 
+                 Calorie.Count + Water.Consumption + Family.History.Overweight +
+                 Exercise.Activity + Snacking, 
+               data = train.data1, family = "binomial")
+summary(ob.fit1)
+
+ob.fit2 <- glm(Obesity.Lvl ~ Age + Weight,
              data = train.data1, family = "binomial")
 o.fit <- glm(Obesity.Lvl ~ Age + Weight,
               data = train.data2, family = "binomial") 
-summary(ob.fit)
+summary(ob.fit2)
 summary(o.fit)
 
-ob.probs <- predict(ob.fit, test.data1, type = "response")
+ob.probs <- predict(ob.fit2, test.data1, type = "response")
 ob.pred <- rep("no",nrow(test.data1))
 ob.pred[ob.probs > 0.5] <- "yes"
 table(ob.pred, test.data1$Obesity.Lvl)
