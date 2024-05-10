@@ -63,37 +63,41 @@ ob.test <- -ob.train
 train.data1 <- obesity[ob.train,]
 test.data1 <- obesity[-ob.train,]
 
-o.train <- sample(1:nrow(obese),0.8*nrow(obese))
-o.test <- -o.train
-train.data2 <- obese[o.train,]
-test.data2 <- obese[-o.train,]
+#o.train <- sample(1:nrow(obese),0.8*nrow(obese))
+#o.test <- -o.train
+#train.data2 <- obese[o.train,]
+#test.data2 <- obese[-o.train,]
 
-ob.fit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
-                 High.Caloric.Food.Consumption + Main.Meal.Consumption + 
-                 Calorie.Count + Water.Consumption + Family.History.Overweight +
-                 Exercise.Activity + Snacking, 
-               data = train.data1, family = "binomial")
+#ob.fit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+#                 High.Caloric.Food.Consumption + Main.Meal.Consumption + 
+#                 Calorie.Count + Water.Consumption + Family.History.Overweight +
+#                 Exercise.Activity + Snacking, 
+#               data = train.data1, family = "binomial")
+ob.fit1 <- glm(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption + 
+               Water.Consumption + Snacking,
+               data = train.data1, family = "binomial") 
+
 summary(ob.fit1)
 
-ob.fit2 <- glm(Obesity.Lvl ~ Age + Weight,
-             data = train.data1, family = "binomial")
-o.fit <- glm(Obesity.Lvl ~ Age + Weight,
-              data = train.data2, family = "binomial") 
-summary(ob.fit2)
-summary(o.fit)
+#ob.fit2 <- glm(Obesity.Lvl ~ Age + Weight,
+#             data = train.data1, family = "binomial")
+#o.fit <- glm(Obesity.Lvl ~ Age + Weight,
+#              data = train.data2, family = "binomial") 
+#summary(ob.fit2)
+#summary(o.fit)
 
-ob.probs <- predict(ob.fit2, test.data1, type = "response")
+ob.probs <- predict(ob.fit1, test.data1, type = "response")
 ob.pred <- rep("no",nrow(test.data1))
 ob.pred[ob.probs > 0.5] <- "yes"
 table(ob.pred, test.data1$Obesity.Lvl)
 mean(ob.pred == test.data1$Obesity.Lvl)
 
 # runs into errors
-o.probs <- predict(o.fit, test.data1, type = "response")
-o.pred <- rep("no",nrow(test.data2))
-o.pred[o.probs > 0.5] <- "yes"
-table(ob.pred, test.data2$Obesity.Lvl)
-mean(ob.pred == test.data2$Obesity.Lvl)
+#o.probs <- predict(o.fit, test.data1, type = "response")
+#o.pred <- rep("no",nrow(test.data2))
+#o.pred[o.probs > 0.5] <- "yes"
+#table(ob.pred, test.data2$Obesity.Lvl)
+#mean(ob.pred == test.data2$Obesity.Lvl)
 
 ###################################
 # Quadratic Discriminant Analysis #
