@@ -51,9 +51,9 @@ train.data <- obese[train,]
 test.data <- obese[-train,]
 
 # All
-fit <- glm(NObeyesdad ~ ., data = train.data, family = "binomial")
-anova(fit)
-#fit <- glm(Obesity.Lvl ~ ., data = train.data, family = "binomial")
+#fit <- glm(NObeyesdad ~ ., data = train.data, family = "binomial")
+#anova(fit)
+fit <- glm(Obesity.Lvl ~ ., data = train.data, family = "binomial")
 summary(fit)
 
 # linear
