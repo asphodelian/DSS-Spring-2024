@@ -314,11 +314,14 @@ summary(maxfit3) # yes
 # Linear Based Fits #
 #####################
 
-fit.1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+fit.1 <- glm(Obesity.Lvl ~ Age + Gender + Weight + 
                High.Caloric.Food.Consumption + Main.Meal.Consumption + 
                Calorie.Count + Water.Consumption + Family.History.Overweight +
-                 Exercise.Activity + Snacking,
+                 Exercise.Activity + Screen.Time + Snacking,
                data = train.data, family = "binomial") 
 summary(fit.1) # no
 
-
+fit.2 <- glm(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption + 
+              Water.Consumption + Snacking,
+             data = train.data, family = "binomial") 
+summary(fit.2) # yes
