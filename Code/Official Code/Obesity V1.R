@@ -147,3 +147,9 @@ mean(knn.pred==test.data1$Obesity.Lvl)
 regfit.full <- regsubsets(Obesity.Lvl ~., data = obesity, nvmax = 16)
 reg.summary <- summary(regfit.full)
 reg.summary
+
+data.frame(
+  Adj.R2 = which.max(reg.summary$adjr2),
+  CP = which.min(reg.summary$cp),
+  BIC = which.min(reg.summary$bic)
+)
