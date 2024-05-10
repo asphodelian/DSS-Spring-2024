@@ -62,10 +62,10 @@ lvl <- table(obese$Obesity.Lvl)
 
 # gender pie
 
-g <- table(obese$Gender)
+g <- table(gender)
 labels <- c("Female", "Male")
 colors = c("violetred2", "steelblue3")
-pie(g,label = g, col = colors)
+pie(g,label = labels, col = colors)
 legend("topright", labels, cex = 1.5, fill = colors)
 
 # age histogram
