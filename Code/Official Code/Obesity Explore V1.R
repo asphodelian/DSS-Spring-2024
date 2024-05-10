@@ -327,6 +327,11 @@ fit.2 <- glm(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption +
 fit2.sum <- summary(fit.2) # yes
 fit2.sum
 
+fitlm.2 <- lm(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption + 
+               Water.Consumption + Snacking,
+             data = train.data, family = "binomial")
+
+# don't run
 data.frame(
   Adj.R2 = fit2.sum$adjr2,
   CP = fit2.sum$cp,
