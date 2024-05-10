@@ -70,7 +70,7 @@ legend("topright", labels, cex = 1.5, fill = colors)
 
 # age histogram
 
-hist(age, main = "Age", ylab = "Age in Years", col = "olivedrab3")
+hist(age, main = "Age", xlab = "Age in years", ylab = "Frequency", col = "olivedrab3")
 
 # obesity pie
 
@@ -85,8 +85,12 @@ legend("topright", labels, cex = 1.5, fill = colors)
 
 plot(age, weight, col = "lightseagreen", main = "Weight vs Age", xlab = "Age", 
      ylab = "Weight (kg)")
+
 plot(height, weight, col = "mediumvioletred", main = "Weight vs Height", 
      xlab = "Height (m)", ylab = "Weight (kg)")
+plot(height^2, weight, col = "mediumvioletred", main = "Weight vs Height", 
+     xlab = "Height (m2)", ylab = "Weight (kg)")
+
 plot(alcohol, weight, 
      col = c("green4", "chartreuse3", "firebrick", "lightsalmon"),
      main = "Weight vs Alcohol", xlab = "Alcohol Consumption", 
@@ -120,3 +124,4 @@ plot(transport, weight,
      col = c("violetred3", "springgreen4", "red4", "lightslateblue", "moccasin"),
      main = "Weight vs Mode of Transport", 
      xlab = "Main Mode of Transportation", ylab = "Weight (kg)")
+
