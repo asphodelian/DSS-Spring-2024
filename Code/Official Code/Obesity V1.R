@@ -68,25 +68,31 @@ test.data1 <- obesity[-ob.train,]
 #train.data2 <- obese[o.train,]
 #test.data2 <- obese[-o.train,]
 
-#ob.fit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight + 
+#ob.fit1 <- glm(Obesity.Lvl ~ Age + Gender + Height + Weight +
 #                 High.Caloric.Food.Consumption + Main.Meal.Consumption + 
 #                 Calorie.Count + Water.Consumption + Family.History.Overweight +
-#                 Exercise.Activity + Snacking, 
+#                 Exercise.Activity + Snacking,
 #               data = train.data1, family = "binomial")
-ob.fit1 <- glm(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption + 
-               Water.Consumption + Snacking,
-               data = train.data1, family = "binomial") 
-
-summary(ob.fit1)
+#ob.fit1 <- glm(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption + 
+#               Water.Consumption + Snacking,
+#               data = train.data1, family = "binomial") 
+#ob.fit1 <- glm(Obesity.Lvl ~ Age + Gender + Weight + 
+#               High.Caloric.Food.Consumption + Main.Meal.Consumption + 
+#               Calorie.Count + Water.Consumption + Family.History.Overweight +
+#               Exercise.Activity + Screen.Time + Snacking,
+#             data = train.data1, family = "binomial") 
+#summary(ob.fit1)
 
 #ob.fit2 <- glm(Obesity.Lvl ~ Age + Weight,
 #             data = train.data1, family = "binomial")
 #o.fit <- glm(Obesity.Lvl ~ Age + Weight,
 #              data = train.data2, family = "binomial") 
-#summary(ob.fit2)
+ob.fit2 <- glm(Obesity.Lvl ~ Weight + Height,
+               data = train.data1, family = "binomial")
+summary(ob.fit2)
 #summary(o.fit)
 
-ob.probs <- predict(ob.fit1, test.data1, type = "response")
+ob.probs <- predict(ob.fit2, test.data1, type = "response")
 ob.pred <- rep("no",nrow(test.data1))
 ob.pred[ob.probs > 0.5] <- "yes"
 table(ob.pred, test.data1$Obesity.Lvl)
@@ -103,28 +109,45 @@ mean(ob.pred == test.data1$Obesity.Lvl)
 # Quadratic Discriminant Analysis #
 ###################################
 
-qda.fit <- qda(Obesity.Lvl ~ Age + Weight, data = train.data1)
+qda.fit1 <- qda(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption + 
+                 Water.Consumption + Snacking, data = train.data1)
 
 # Error in qda.default(x, grouping, ...) : 
 # rank deficiency in group Insufficient_Weight
 
 # with "insufficient weight no longer there, some group is now too small for qda
 
-qda.fit
-qda.class <- predict(qda.fit, test.data1)$class
-table(qda.class, test.data1$Obesity.Lvl)
-mean(qda.class == test.data1$Obesity.Lvl)
+qda.fit1
+qda.class1 <- predict(qda.fit1, test.data1)$class
+table(qda.class1, test.data1$Obesity.Lvl)
+mean(qda.class1 == test.data1$Obesity.Lvl)
+
+
+qda.fit2 <- qda(Obesity.Lvl ~ Weight + Height, data = train.data1)
+qda.fit2
+qda.class2 <- predict(qda.fit2, test.data1)$class
+table(qda.class2, test.data1$Obesity.Lvl)
+mean(qda.class2 == test.data1$Obesity.Lvl)
 
 ################################
 # Linear Discriminant Analysis #
 ################################
 
-lda.fit <- lda(Obesity.Lvl ~ Age + Weight, data = train.data1) 
-lda.fit
-plot(lda.fit)
-lda.class <- predict(lda.fit, test.data1)$class
-table(lda.class, test.data1$Obesity.Lvl)
-mean(lda.class == test.data1$Obesity.Lvl)
+lda.fit1 <- lda(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption +
+                 Water.Consumption + Snacking, data = train.data1) 
+lda.fit1
+plot(lda.fit1)
+lda.class <- predict(lda.fit1, test.data1)$class
+table(lda.class1, test.data1$Obesity.Lvl)
+mean(lda.class1 == test.data1$Obesity.Lvl)
+
+
+lda.fit2 <- lda(Obesity.Lvl ~ Weight + Height, data = train.data1) 
+lda.fit2
+plot(lda.fit1)
+lda.class <- predict(lda.fit1, test.data1)$class
+table(lda.class1, test.data1$Obesity.Lvl)
+mean(lda.class1 == test.data1$Obesity.Lvl)
 
 ########################
 # K-Nearest Neighbors ##
