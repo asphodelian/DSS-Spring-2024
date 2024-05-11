@@ -137,7 +137,7 @@ lda.fit1 <- lda(Obesity.Lvl ~ Age + Weight + Main.Meal.Consumption +
                  Water.Consumption + Snacking, data = train.data1) 
 lda.fit1
 plot(lda.fit1)
-lda.class <- predict(lda.fit1, test.data1)$class
+lda.class1 <- predict(lda.fit1, test.data1)$class
 table(lda.class1, test.data1$Obesity.Lvl)
 mean(lda.class1 == test.data1$Obesity.Lvl)
 
