@@ -75,3 +75,17 @@
 - Began slides presentation prep
 	- slides template chosen from SlidesCarnival
 	- starting with the basics of the dataset
+
+## May 9
+- Redid fits to find better one
+	- based on best subset selection
+	- Made some headway
+- Worked on slides
+
+## May 10
+- Had to fix fits again
+	- methods & prediction were either not working or did not produced desired results
+- Worked on slides 
+	- Google
+	- Powerpoint
+- Finished slides
